@@ -33,7 +33,7 @@ public class AppDetailActivity extends AppCompatActivity {
 
         act.appTitleTxtV.setText(appData.getTitle());
         act.comNameTxt.setText(appData.getCompanyName());
-        act.userRating.setText(String.format("%f 점", appData.getUserRating()));
+        act.userRating.setText(String.format("%1f 점", appData.getUserRating()));
 
         // 구매 여부에 따라 버튼 보이기
         if(appData.isMine()){
