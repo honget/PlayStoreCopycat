@@ -20,13 +20,22 @@ public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
 
-    AppAdapter appAdapter;Appli
+    AppAdapter appAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+        //확인 버튼이 눌리면 "확인 버튼을 눌렀습니다." 라는 포스트를 띄워 봅시다.
+
+        binding.btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "확인 버튼을 눌렀습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         fillApps();
 
@@ -38,18 +47,19 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, String.format("%d 번째 줄이 눌렸습니다.", position), Toast.LENGTH_SHORT).show();
 
-
             }
         });
 
         binding.appListView.setAdapter(appAdapter);
 
-        //확인 버튼이 눌리면 "확인 버튼을 눌렀습니다." 라는 포스트를 띄워 봅시다.
 
-        binding.btn.setOnClickListener(new View.OnClickListener() {
+        binding.appListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "확인 버튼을 눌렀습니다.", Toast.LENGTH_SHORT).show();
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Toast.makeText(MainActivity.this, String.format("%d 번째 줄을 오래  눌름", position), Toast.LENGTH_SHORT).show();
+
+                return false;
             }
         });
     }
