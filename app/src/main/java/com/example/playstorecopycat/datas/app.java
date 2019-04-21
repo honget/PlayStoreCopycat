@@ -17,40 +17,16 @@ public class app {
     private int price;
 
     //구매 여부
-    private boolean isMine;
+    private boolean isMine = false;
 
-    //
-    public app(int rank, String title, String companyName, double userRating, int price, boolean isMine) {
+//    public app(int rank, String title, String companyName, double userRating, int price, boolean isMine) {
+    public app(int rank, String title, String companyName, double userRating, int price) {
         this.rank = rank;
         this.title = title;
         this.companyName = companyName;
         this.userRating = userRating;
         this.price = price;
-        this.isMine = isMine;
-    }
-
-    public void setRank(int rank) {
-        this.rank = rank;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    public void setUserRating(double userRating) {
-        this.userRating = userRating;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public void setMine(boolean mine) {
-        isMine = mine;
+//        this.isMine = isMine;
     }
 
     public int getRank() {

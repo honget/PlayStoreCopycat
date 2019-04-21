@@ -22,7 +22,7 @@ public class AppAdapter extends ArrayAdapter<app> {
 
     LayoutInflater inf;
 
-    AppAdapter(Context context, List<app> appList){
+    public AppAdapter(Context context, List<app> appList){
 
         super(context, R.layout.app_item_list, appList);
 
@@ -62,9 +62,9 @@ public class AppAdapter extends ArrayAdapter<app> {
             //Stirng.format의 %,d 를 이용해 세자리 마다 콤파 적용
             priceOrInstalledTxtV.setText( String.format("%,d 원", appData.getPrice()) );
         }
-        //설치 코딩한 글자 그대로라 주석처리
-//        else {
-//        }
+        else {
+            priceOrInstalledTxtV.setText( "설치된 항목" );
+        }
 
         return row;
     }
