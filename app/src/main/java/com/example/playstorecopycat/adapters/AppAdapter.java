@@ -37,6 +37,8 @@ public class AppAdapter extends ArrayAdapter<app> {
             row = inf.inflate(R.layout.app_item_list, null);
         }
 
+        //실질적으로 상황에 맞게 머리를 써야 하는 부분
+
 //        row.findViewById("");
 
         return row;

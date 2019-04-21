@@ -26,7 +26,7 @@
             >
 
             <TextView
-                android:id="@+id/appNameTxtV"
+                android:id="@+id/rankAndTitleTxtV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
@@ -40,6 +40,7 @@
                 >
 
                 <TextView
+                    android:id="@+id/companyName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="회사"
@@ -58,26 +59,31 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/star1"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@mipmap/star_empty"
                     />
                 <ImageView
+                    android:id="@+id/star2"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@mipmap/star_empty"
                     />
                 <ImageView
+                    android:id="@+id/star3"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@mipmap/star_empty"
                     />
                 <ImageView
+                    android:id="@+id/star4"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@mipmap/star_empty"
                     />
                 <ImageView
+                    android:id="@+id/star5"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@mipmap/star_empty"
@@ -92,6 +98,7 @@
                 >
 
                 <TextView
+                    android:id="@+id/priceOrInstalled"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="설치 항목"
