@@ -40,7 +40,7 @@
                 >
 
                 <TextView
-                    android:id="@+id/companyName"
+                    android:id="@+id/companyNameTxtV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="회사"
@@ -59,31 +59,31 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/star1"
+                    android:id="@+id/star1ImgV"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@mipmap/star_empty"
                     />
                 <ImageView
-                    android:id="@+id/star2"
+                    android:id="@+id/star2ImgV"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@mipmap/star_empty"
                     />
                 <ImageView
-                    android:id="@+id/star3"
+                    android:id="@+id/star3ImgV"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@mipmap/star_empty"
                     />
                 <ImageView
-                    android:id="@+id/star4"
+                    android:id="@+id/star4ImgV"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@mipmap/star_empty"
                     />
                 <ImageView
-                    android:id="@+id/star5"
+                    android:id="@+id/star5ImgV"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@mipmap/star_empty"
@@ -98,7 +98,7 @@
                 >
 
                 <TextView
-                    android:id="@+id/priceOrInstalled"
+                    android:id="@+id/priceOrInstalledTxtV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="설치 항목"
