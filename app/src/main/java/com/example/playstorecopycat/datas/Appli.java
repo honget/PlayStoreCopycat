@@ -1,7 +1,8 @@
 package com.example.playstorecopycat.datas;
 
-public class Appli {
+import java.io.Serializable;
 
+public class Appli implements Serializable {
 
     //순위
     private int rank;
