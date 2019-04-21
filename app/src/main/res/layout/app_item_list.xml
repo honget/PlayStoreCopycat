@@ -60,32 +60,27 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@mipmap/star_empty"
                     />
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@mipmap/star_empty"
                     />
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@mipmap/star_empty"
                     />
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@mipmap/star_empty"
                     />
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@mipmap/ic_launcher"
-                    />
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@color/colorPrimary"
+                    android:src="@mipmap/star_empty"
                     />
             </LinearLayout>
 
