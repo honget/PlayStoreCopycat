@@ -64,21 +64,41 @@ public class MainActivity extends AppCompatActivity {
                 Map<String, Object> aa = new HashMap<>();
                 intent.putExtra("APP_DATA", appData);
 
-
                 startActivity(intent);
+
             }
         });
 
         binding.appListView.setAdapter(appAdapter);
 
 
+        //꾹 눌렀을 경우 이벤트
         binding.appListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Toast.makeText(MainActivity.this, String.format("%d 번째 줄을 오래  눌름", position), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, String.format("%d 번째 줄을 오래  눌름", position), Toast.LENGTH_SHORT).show();
+                appList.remove(position);
 
-                return false;
+                //변경 정보 전달
+                appAdapter.notifyDataSetChanged();
+
+                return true;
+            }
+        });
+
+        binding.okBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //리스트 추가로직
+                appList.add(new Appli(0, "아스팔트 8: 에어본", "GameLoft", 5, 6000, true));
+
+                appAdapter.notifyDataSetChanged();
+
+                //마지막으로 이동
+                binding.appListView.smoothScrollToPosition(appList.size() - 1);
+
             }
         });
     }
@@ -86,9 +106,9 @@ public class MainActivity extends AppCompatActivity {
     public void fillApps(){
         appList.add(new Appli(1, "아스팔트 8: 에어본", "GameLoft", 5, 6000, true));
         appList.add(new Appli(2, "MineCraft - Pocket Edition", "Mojang", 4, 5000, true));
-        appList.add(new Appli(3, "아스팔트 7: 하트", "GameLoft", 2, 1000, false));
+        appList.add(new Appli(3, "아스팔트 7: 하트", "GameLoft", 2.2, 1000, false));
         appList.add(new Appli(4, "팔라독(Paladog)", "FazeCat", 3, 1087, false));
         appList.add(new Appli(5, "Plants Vs. Zombies", "EA Swiss Sarl", 1, 2000, false));
-        appList.add(new Appli(6, "스왐피(Swampy)", "Disney", 4, 3000, false));
+        appList.add(new Appli(6, "스왐피(Swampy)", "Disney", 4.5, 3000, false));
     }
 }
