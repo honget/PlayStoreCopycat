@@ -10,6 +10,12 @@
         android:orientation="vertical"
         tools:context=".MainActivity">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="어플리 케이션 "
+            />
+
         <ListView
             android:id="@+id/appListView"
             android:layout_width="match_parent"
