@@ -60,7 +60,7 @@ public class AppAdapter extends ArrayAdapter<app> {
         if(!appData.isMine()){
             //미설치
             //Stirng.format의 %,d 를 이용해 세자리 마다 콤파 적용
-            priceOrInstalledTxtV.setText(String.format("%,d 원"), appDaa.getPrice());
+            priceOrInstalledTxtV.setText( String.format("%,d 원", appData.getPrice()) );
         }
         //설치 코딩한 글자 그대로라 주석처리
 //        else {
