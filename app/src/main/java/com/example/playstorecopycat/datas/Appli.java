@@ -29,6 +29,14 @@ public class Appli {
         this.price = price;
         this.isMine = isMine;
     }
+    public Appli(int rank, String title, String companyName, double userRating, int price ) {
+        this.rank = rank;
+        this.title = title;
+        this.companyName = companyName;
+        this.userRating = userRating;
+        this.price = price;
+        this.isMine = false;
+    }
 
     public int getRank() {
         return rank;
