@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/rankNumberTxtV"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="숫자"
+            android:textSize="20sp"
+            android:gravity="center"
+            />
+
+        <ImageView
+            android:id="@+id/appImgV"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/ic_launcher"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/appNameTxtV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="어플 명"
+                />
+
+            <TextView
+                android:id="@+id/appStoryTxtV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:text="어플 설명"
+                />
+
+            <TextView
+                android:id="@+id/appStarTxtV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="별점"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            >
+
+            <Button
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:text="다운"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>
