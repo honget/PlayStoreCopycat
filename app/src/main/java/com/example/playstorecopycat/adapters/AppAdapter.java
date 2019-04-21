@@ -10,19 +10,18 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.playstorecopycat.R;
-import com.example.playstorecopycat.databinding.AppItemListBinding;
-import com.example.playstorecopycat.datas.app;
+import com.example.playstorecopycat.datas.Appli;
 
 import java.util.List;
 
-public class AppAdapter extends ArrayAdapter<app> {
+public class AppAdapter extends ArrayAdapter<Appli> {
 
-    List<app> appList;
+    List<Appli> appList;
     Context context;
 
     LayoutInflater inf;
 
-    public AppAdapter(Context context, List<app> appList){
+    public AppAdapter(Context context, List<Appli> appList){
 
         super(context, R.layout.app_item_list, appList);
 
@@ -43,7 +42,7 @@ public class AppAdapter extends ArrayAdapter<app> {
         //실질적으로 상황에 맞게 머리를 써야 하는 부분
 
         //앱 리스트에서 해당 줄의 데이터 뽑음
-        app appData = appList.get(position);
+        Appli appData = appList.get(position);
 
         //아이디 찾기
         TextView rankAndTitleTxtV = row.findViewById(R.id.rankAndTitleTxtV);
