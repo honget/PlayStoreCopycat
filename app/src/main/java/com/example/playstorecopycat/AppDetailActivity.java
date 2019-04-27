@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.playstorecopycat.databinding.ActivityAppDetailBinding;
@@ -35,7 +36,7 @@ public class AppDetailActivity extends AppCompatActivity {
 
         act.appTitleTxtV.setText(appData.getTitle());
         act.comNameTxt.setText(appData.getCompanyName());
-        act.userRating.setText(String.format("%1f 점", appData.getUserRating()));
+        act.userRating.setText(String.format("%.21f 점", appData.getUserRating()));
 
         // 구매 여부에 따라 버튼 보이기
         if(appData.isMine()){
@@ -78,5 +79,13 @@ public class AppDetailActivity extends AppCompatActivity {
 
             }
         });
+
+        act.dateTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("텍스트 뷰 클릭!", "동작 확인용!!!!!");
+            }
+        });
+
     }
 }
