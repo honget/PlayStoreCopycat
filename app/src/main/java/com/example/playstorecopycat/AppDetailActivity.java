@@ -9,9 +9,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.Toast;
 
 import com.example.playstorecopycat.databinding.ActivityAppDetailBinding;
 import com.example.playstorecopycat.datas.Appli;
+
+import java.util.Calendar;
 
 public class AppDetailActivity extends AppCompatActivity {
 
@@ -38,7 +41,7 @@ public class AppDetailActivity extends AppCompatActivity {
 
         act.appTitleTxtV.setText(appData.getTitle());
         act.comNameTxt.setText(appData.getCompanyName());
-        act.userRating.setText(String.format("%f.1 점", appData.getUserRating()));
+        act.userRating.setText(String.format("%.1f 점", appData.getUserRating()));
 
         // 구매 여부에 따라 버튼 보이기
         if(appData.isMine()){
@@ -91,6 +94,24 @@ public class AppDetailActivity extends AppCompatActivity {
                 DatePickerDialog dpd = new DatePickerDialog(AppDetailActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
+                        //Toast.makeText(AppDetailActivity.this, String.format("%d년 %월 %일 ", year, month + 1, dayOfMonth), Toast.LENGTH_SHORT);
+
+                        //new Calendar 라고 만들지 않는다. 싱글턴 패턴의 일종
+                        Calendar cal = Calendar.getInstance();
+
+                        //1. 항목별  세팅
+                        cal.set(Calendar.YEAR, year);
+                        cal.set(Calendar.MONTH, month);
+                        cal.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+                        //2. 일괄 세팅
+                        cal.set(year, month, dayOfMonth);
+
+
+                        //같은 메소드인데 값에 따라 행동 다름 => overloading 의 예시
+
+
 
                     }
                     //초기 출력 값
