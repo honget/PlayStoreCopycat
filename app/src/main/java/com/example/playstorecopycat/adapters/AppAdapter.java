@@ -61,28 +61,28 @@ public class AppAdapter extends ArrayAdapter<Appli> {
         //회사 이름은 그대로
         companyNameTxtV.setText(appData.getCompanyName());
 
-        List<ImageView> startList = new ArrayList<>();
-
-        startList.add(start1);
-        startList.add(start2);
-        startList.add(start3);
-        startList.add(start4);
-        startList.add(start5);
+//        List<ImageView> startList = new ArrayList<>();
+//
+//        startList.add(start1);
+//        startList.add(start2);
+//        startList.add(start3);
+//        startList.add(start4);
+//        startList.add(start5);
 
 
         //리스트는 재사용때문에 초기화 작업 필요
 
-        for (ImageView star : startList) {
-            star.setImageResource(R.drawable.star_empty);
-        }
-        for(int i = 0 ; i < appData.getUserRating(); i++) {
-            startList.get(i).setImageResource(R.drawable.star_fill);
-        }
+//        for (ImageView star : startList) {
+//            star.setImageResource(R.drawable.star_empty);
+//        }
+//        for(int i = 0 ; i < appData.getUserRating(); i++) {
+//            startList.get(i).setImageResource(R.drawable.star_fill);
+//        }
 
         ImageView[] starts = {start1, start2, start3, start4, start5};
 
-        for(int i = 0 ; i < 5 ; i++) {
-            starts[i].setImageResource(R.drawable.star_empty);
+        for(ImageView start : starts) {
+            start.setImageResource(R.drawable.star_empty);
         }
 
         for(int i = 0 ; i < appData.getUserRating(); i++) {

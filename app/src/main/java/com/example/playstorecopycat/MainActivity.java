@@ -1,7 +1,9 @@
 package com.example.playstorecopycat;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -76,12 +78,32 @@ public class MainActivity extends AppCompatActivity {
         binding.appListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-
                 //Toast.makeText(MainActivity.this, String.format("%d 번째 줄을 오래  눌름", position), Toast.LENGTH_SHORT).show();
-                appList.remove(position);
 
-                //변경 정보 전달
-                appAdapter.notifyDataSetChanged();
+                AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+
+                final int finalPosition = position;
+
+                alert.setTitle("앱 삭제 확인");
+                alert.setMessage("정말 이 맵을 삭제하시겠습니까?");
+                alert.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        appList.remove(finalPosition);
+
+                        Toast.makeText(MainActivity.this, "해당 앱이 삭제 되었습니다.", Toast.LENGTH_SHORT).show();
+
+                        //변경 정보 전달
+                        appAdapter.notifyDataSetChanged();
+
+                    }
+                });
+
+                alert.setNegativeButton("취소", null);
+
+                alert.show();
 
                 return true;
             }
@@ -90,6 +112,12 @@ public class MainActivity extends AppCompatActivity {
         binding.okBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                AlertDialog.Builder okAlert = new AlertDialog.Builder(MainActivity.this);
+//                okAlert.setTitle("게임 추가 알림");
+                okAlert.setMessage("임시 게임이 추가 됩니다.");
+                okAlert.setPositiveButton("확인", null);
+                okAlert.show();
 
                 //리스트 추가로직
                 appList.add(new Appli(0, "아스팔트 8: 에어본", "GameLoft", 5, 6000, true));
