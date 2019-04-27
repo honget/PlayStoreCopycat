@@ -86,11 +86,12 @@ public class AppAdapter extends ArrayAdapter<Appli> {
         }
 
         for(int i = 0 ; i < appData.getUserRating(); i++) {
-            starts[i].setImageResource(R.drawable.star_fill);
 
             //반달 표시
-            if( appData.getUserRating() < i + 1 && appData.getUserRating() > i + 1 ){
-                starts[i].setImageResource(R.drawable.ic_launcher_background);
+            if(i + 0.5 == appData.getUserRating()){
+                starts[i].setImageResource(R.drawable.star_half);
+            }else{
+                starts[i].setImageResource(R.drawable.star_fill);
             }
         }
 
