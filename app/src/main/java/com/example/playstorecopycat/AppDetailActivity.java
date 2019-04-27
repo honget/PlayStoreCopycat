@@ -1,5 +1,6 @@
 package com.example.playstorecopycat;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.net.Uri;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.DatePicker;
 
 import com.example.playstorecopycat.databinding.ActivityAppDetailBinding;
 import com.example.playstorecopycat.datas.Appli;
@@ -36,7 +38,7 @@ public class AppDetailActivity extends AppCompatActivity {
 
         act.appTitleTxtV.setText(appData.getTitle());
         act.comNameTxt.setText(appData.getCompanyName());
-        act.userRating.setText(String.format("%.21f 점", appData.getUserRating()));
+        act.userRating.setText(String.format("%f.1 점", appData.getUserRating()));
 
         // 구매 여부에 따라 버튼 보이기
         if(appData.isMine()){
@@ -84,6 +86,17 @@ public class AppDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d("텍스트 뷰 클릭!", "동작 확인용!!!!!");
+
+                //날짜
+                DatePickerDialog dpd = new DatePickerDialog(AppDetailActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
+                    }
+                    //초기 출력 값
+                }, 2019, 4 - 1, 27);
+
+                dpd.show();
             }
         });
 
