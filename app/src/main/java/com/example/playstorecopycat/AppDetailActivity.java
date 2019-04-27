@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.playstorecopycat.databinding.ActivityAppDetailBinding;
 import com.example.playstorecopycat.datas.Appli;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class AppDetailActivity extends AppCompatActivity {
@@ -100,6 +101,9 @@ public class AppDetailActivity extends AppCompatActivity {
                         //new Calendar 라고 만들지 않는다. 싱글턴 패턴의 일종
                         Calendar cal = Calendar.getInstance();
 
+                        /**
+                         * 같은 메소드인데 값에 따라 행동 다름 => overloading 의 예시
+                         */
                         //1. 항목별  세팅
                         cal.set(Calendar.YEAR, year);
                         cal.set(Calendar.MONTH, month);
@@ -108,11 +112,17 @@ public class AppDetailActivity extends AppCompatActivity {
                         //2. 일괄 세팅
                         cal.set(year, month, dayOfMonth);
 
+                        //cal 에 저장된 정보를 출력
+                        //날짜를 양식으로 바꾸고 싶을때  SimpleDateFormat 사용
 
-                        //같은 메소드인데 값에 따라 행동 다름 => overloading 의 예시
+                        //어떤 양식으로 문자를 출력할지 양식 지정
+                        SimpleDateFormat sdf = new SimpleDateFormat("YYYY년 M월 d일");
 
+                        //양식으로 String 출력
+                        String dataSrt = sdf.format(cal.getTimeInMillis());
 
-
+                        //화면에 출력
+                        act.dateTxt.setText(dataSrt);
                     }
                     //초기 출력 값
                 }, 2019, 4 - 1, 27);
