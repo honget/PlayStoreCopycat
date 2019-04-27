@@ -7,11 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.playstorecopycat.R;
 import com.example.playstorecopycat.datas.Appli;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AppAdapter extends ArrayAdapter<Appli> {
@@ -48,12 +50,49 @@ public class AppAdapter extends ArrayAdapter<Appli> {
         TextView rankAndTitleTxtV = row.findViewById(R.id.rankAndTitleTxtV);
         TextView companyNameTxtV = row.findViewById(R.id.companyNameTxtV);
         TextView priceOrInstalledTxtV = row.findViewById(R.id.priceOrInstalledTxtV);
-
+        ImageView start1 = row.findViewById(R.id.starImgV1);
+        ImageView start2 = row.findViewById(R.id.starImgV2);
+        ImageView start3 = row.findViewById(R.id.starImgV3);
+        ImageView start4 = row.findViewById(R.id.starImgV4);
+        ImageView start5 = row.findViewById(R.id.starImgV5);
         //등스와 제목 세팅
         rankAndTitleTxtV.setText(String.format("%d, %s", appData.getRank(), appData.getTitle()));
 
         //회사 이름은 그대로
         companyNameTxtV.setText(appData.getCompanyName());
+
+        List<ImageView> startList = new ArrayList<>();
+
+        startList.add(start1);
+        startList.add(start2);
+        startList.add(start3);
+        startList.add(start4);
+        startList.add(start5);
+
+
+        //리스트는 재사용때문에 초기화 작업 필요
+
+        for (ImageView star : startList) {
+            star.setImageResource(R.drawable.star_empty);
+        }
+        for(int i = 0 ; i < appData.getUserRating(); i++) {
+            startList.get(i).setImageResource(R.drawable.star_fill);
+        }
+
+        ImageView[] starts = {start1, start2, start3, start4, start5};
+
+        for(int i = 0 ; i < 5 ; i++) {
+            starts[i].setImageResource(R.drawable.star_empty);
+        }
+
+        for(int i = 0 ; i < appData.getUserRating(); i++) {
+            starts[i].setImageResource(R.drawable.star_fill);
+
+            //반달 표시
+            if( appData.getUserRating() < i && appData.getUserRating() > i + 1 ){
+                starts[i].setImageResource(R.drawable.ic_launcher_background);
+            }
+        }
 
         //설치 여부 따라 안내
         if(!appData.isMine()){

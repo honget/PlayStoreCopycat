@@ -59,34 +59,34 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/star1ImgV"
+                    android:id="@+id/starImgV1"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@mipmap/star_empty"
+                    android:src="@drawable/star_empty"
                     />
                 <ImageView
-                    android:id="@+id/star2ImgV"
+                    android:id="@+id/starImgV2"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@mipmap/star_empty"
+                    android:src="@drawable/star_empty"
                     />
                 <ImageView
-                    android:id="@+id/star3ImgV"
+                    android:id="@+id/starImgV3"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@mipmap/star_empty"
+                    android:src="@drawable/star_empty"
                     />
                 <ImageView
-                    android:id="@+id/star4ImgV"
+                    android:id="@+id/starImgV4"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@mipmap/star_empty"
+                    android:src="@drawable/star_empty"
                     />
                 <ImageView
-                    android:id="@+id/star5ImgV"
+                    android:id="@+id/starImgV5"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@mipmap/star_empty"
+                    android:src="@drawable/star_empty"
                     />
             </LinearLayout>
 
