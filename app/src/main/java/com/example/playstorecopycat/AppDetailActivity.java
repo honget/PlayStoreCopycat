@@ -100,7 +100,35 @@ public class AppDetailActivity extends AppCompatActivity {
         act.goWebBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Uri uri = Uri.parse("https://www.naver.com");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 
+                startActivity(intent);
+            }
+        });
+
+        act.buyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //스토어 상세 보기 의 주소 참조
+                Uri uri = Uri.parse("market://details?id=com.netflix.mediaclient");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+
+                startActivity(intent);
+
+            }
+        });
+
+        act.launchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Uri uri = Uri.parse("geo:124.24,123.32");
+
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+
+                startActivity(intent);
             }
         });
 
