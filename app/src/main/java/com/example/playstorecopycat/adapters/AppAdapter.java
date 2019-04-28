@@ -34,6 +34,10 @@ public class AppAdapter extends ArrayAdapter<Appli> {
         inf = LayoutInflater.from(context);
     }
 
+    public void setAppList(List<Appli> appList){
+        this.appList = appList;
+    }
+
     @Override
     public View getView(int position, View row, ViewGroup parent) {
 

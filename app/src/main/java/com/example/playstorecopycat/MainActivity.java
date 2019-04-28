@@ -142,9 +142,8 @@ public class MainActivity extends AppCompatActivity {
                 //편도
 //                startActivity(intent);
 
+                //왕복
                 startActivityForResult(intent, REQ_FOR_FILTER);
-
-
 
             }
         });
@@ -169,6 +168,19 @@ public class MainActivity extends AppCompatActivity {
 
 //                Toast.makeText(this, "필터가 설정됨", Toast.LENGTH_SHORT).show();
                 double filterRating = data.getDoubleExtra("MIN_RATION", 0);
+
+
+                List<Appli> tmpList = new ArrayList<>();
+
+                for (Appli appli : appList){
+
+                    if(appli.getUserRating() >= filterRating){
+                        tmpList.add(appli);
+                    }
+                }
+
+                appAdapter.setAppList(tmpList);
+                appAdapter.notifyDataSetChanged();
 
                 binding.filterTxt.setText(String.format("(필터처리 %.1f점 )", filterRating));
 
