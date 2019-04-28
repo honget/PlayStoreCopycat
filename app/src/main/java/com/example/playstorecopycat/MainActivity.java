@@ -169,17 +169,16 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(this, "필터가 설정됨", Toast.LENGTH_SHORT).show();
                 double filterRating = data.getDoubleExtra("MIN_RATION", 0);
 
+                fillApps();
 
-                List<Appli> tmpList = new ArrayList<>();
+                for (int i = appList.size() - 1 ; i >= 0 ; i--){
+                    Appli appli = appList.get(i);
 
-                for (Appli appli : appList){
-
-                    if(appli.getUserRating() >= filterRating){
-                        tmpList.add(appli);
+                    if(appli.getUserRating() < filterRating){
+                        appList.remove(i);
                     }
                 }
 
-                appAdapter.setAppList(tmpList);
                 appAdapter.notifyDataSetChanged();
 
                 binding.filterTxt.setText(String.format("(필터처리 %.1f점 )", filterRating));
@@ -194,11 +193,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void fillApps(){
+
+        appList.clear();
+
         appList.add(new Appli(1, "아스팔트 8: 에어본", "GameLoft", 5, 6000, true));
         appList.add(new Appli(2, "MineCraft - Pocket Edition", "Mojang", 4, 5000, true));
         appList.add(new Appli(3, "아스팔트 7: 하트", "GameLoft", 2.5, 1000, false));
         appList.add(new Appli(4, "팔라독(Paladog)", "FazeCat", 3, 1087, false));
         appList.add(new Appli(5, "Plants Vs. Zombies", "EA Swiss Sarl", 1, 2000, false));
-        appList.add(new Appli(6, "스왐피(Swampy)", "Disney", 4.5, 3000, false));
+        appList.add(new Appli(6, "스왐피(Swampy)", "Disney", 4.5, 3000, false));appList.add(new Appli(1, "아스팔트 8: 에어본", "GameLoft", 5, 6000, true));
+        appList.add(new Appli(7, "MineCraft - Pocket Edition", "Mojang", 4, 5000, true));
+        appList.add(new Appli(8, "아스팔트 7: 하트", "GameLoft", 2.5, 1000, false));
+        appList.add(new Appli(9, "팔라독(Paladog)", "FazeCat", 3, 1087, false));
+        appList.add(new Appli(10, "Plants Vs. Zombies", "EA Swiss Sarl", 1, 2000, false));
+        appList.add(new Appli(11, "스왐피(Swampy)", "Disney", 4.5, 3000, false));appList.add(new Appli(1, "아스팔트 8: 에어본", "GameLoft", 5, 6000, true));
+        appList.add(new Appli(12, "MineCraft - Pocket Edition", "Mojang", 4, 5000, true));
+        appList.add(new Appli(13, "아스팔트 7: 하트", "GameLoft", 2.5, 1000, false));
+        appList.add(new Appli(14, "팔라독(Paladog)", "FazeCat", 3, 1087, false));
+        appList.add(new Appli(15, "Plants Vs. Zombies", "EA Swiss Sarl", 1, 2000, false));
+        appList.add(new Appli(16, "스왐피(Swampy)", "Disney", 4.5, 3000, false));
     }
 }
