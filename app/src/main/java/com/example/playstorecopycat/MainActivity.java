@@ -129,6 +129,21 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        binding.fillterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FillterActivity.class);
+
+                //편도
+//                startActivity(intent);
+
+                startActivityForResult(intent, 1);
+
+
+
+            }
+        });
     }
 
     public void fillApps(){
