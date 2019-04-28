@@ -22,16 +22,8 @@
             android:text="최저 평점"
             />
 
-
-        <EditText
-            android:id="@+id/minRank"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:hint="여기에 입력된 평점 이하의 앱은 걸러 냅니다."
-            />
-
         <Spinner
+            android:id="@+id/minRation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/FILLTER_LIST"

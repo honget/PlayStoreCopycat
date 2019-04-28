@@ -3,9 +3,11 @@ package com.example.playstorecopycat;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
@@ -21,6 +23,8 @@ import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    final static int REQ_FOR_FILTER = 150;
 
     List<Appli> appList = new ArrayList<>();
 
@@ -138,12 +142,43 @@ public class MainActivity extends AppCompatActivity {
                 //편도
 //                startActivity(intent);
 
-                startActivityForResult(intent, 1);
+                startActivityForResult(intent, REQ_FOR_FILTER);
 
 
 
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+        Log.d("액티비티 결과", "결과가 돌아옴");
+        Log.d("requestCode 결과", requestCode + "");
+        Log.d("resultCode 결과", resultCode + "");
+        // 결과가 돌아옴
+
+        //필터 설정하러 갔다 돌아옴
+        if(requestCode == REQ_FOR_FILTER){
+
+
+            //확인 버튼 클릭
+            if(resultCode == RESULT_OK){
+
+//                Toast.makeText(this, "필터가 설정됨", Toast.LENGTH_SHORT).show();
+                double filterRating = data.getDoubleExtra("MIN_RATION", 0);
+
+                binding.filterTxt.setText(String.format("(필터처리 %.1f점 )", filterRating));
+
+                //확인이 아니고 취소
+            }else{
+
+                Toast.makeText(this, "필터가 설정이 취소", Toast.LENGTH_SHORT).show();
+
+            }
+        }
     }
 
     public void fillApps(){
